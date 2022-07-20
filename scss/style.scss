@@ -64,8 +64,9 @@ $break_xs: 500px;
 
 // Подключение файлов
 @import 'blocks/settings';
-@import 'blocks/template';
 @import 'hamburgers/hamburgers';
+@import 'blocks/template';
+@import 'blocks/popup';
 @import 'blocks/header';
 @import 'blocks/footer';
 // @import 'blocks/menu';

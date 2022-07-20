@@ -205,20 +205,6 @@ body.lock {
 }
 
 /* /settings */
-/* template */
-.swiper {
-  padding: 100px 0;
-}
-.swiper__slider {
-  overflow: hidden;
-  position: relative;
-}
-
-.airDatepicker {
-  padding: 100px 0;
-}
-
-/* /template */
 /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers
@@ -355,6 +341,80 @@ body.lock {
   transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
+/* template */
+.swiper {
+  padding: 100px 0;
+}
+.swiper__slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.airDatepicker {
+  padding: 100px 0;
+}
+
+.magnigicPopup {
+  padding: 100px 0;
+}
+
+/* /template */
+/* popup */
+.popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.15s ease-out;
+  -o-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-transform: translate(0, 50px);
+  -ms-transform: translate(0, 50px);
+  transform: translate(0, 50px);
+}
+
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+  -webkit-transform: translate(0, 50px);
+  -ms-transform: translate(0, 50px);
+  transform: translate(0, 50px);
+}
+
+/* /popup */
 /* header */
 /* /header */
 /* footer */

@@ -28,4 +28,9 @@ window.onload = function () {
     position: 'right top',
   });
 
+  // Magnific Popup
+  $('.open-popup-link').magnificPopup({
+    mainClass: 'mfp-fade'
+  });
+
 }
