@@ -1,0 +1,38 @@
+extends core/base.pug
+
+block title 
+  title Главная
+
+block content
+
+  .page 
+
+    include core/header.pug
+
+    .content 
+
+      // swiper
+      .swiper
+        .wrapper 
+          #swiper.swiper__slider
+            .swiper-wrapper 
+              .swiper-slide 
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim amet aliquam facilis consequatur nesciunt tenetur fugit, aut repellendus fugiat rem, asperiores et laboriosam beatae accusamus! Aliquam magni similique reiciendis perferendis, nulla consequatur vero dolorum iste quos voluptatem distinctio fuga, tempora doloribus cupiditate est quod commodi expedita minima officia facilis ullam.
+              .swiper-slide 
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim amet aliquam facilis consequatur nesciunt tenetur fugit, aut repellendus fugiat rem, asperiores et laboriosam beatae accusamus! Aliquam magni similique reiciendis perferendis, nulla consequatur vero dolorum iste quos voluptatem distinctio fuga, tempora doloribus cupiditate est quod commodi expedita minima officia facilis ullam.
+            //- If we need pagination
+            .swiper-pagination
+            //- If we need navigation buttons
+            .swiper-button-prev
+            .swiper-button-next
+            //- If we need scrollbar
+            .swiper-scrollbar
+      // /swiper
+
+      // airDdatepicker
+      .airDdatepicker
+        .wrapper 
+          input(type="text")#airDatepicker
+      // /airDdatepicker
+
+    include core/footer.pug

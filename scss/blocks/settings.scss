@@ -60,4 +60,13 @@ body {
 .content {
   flex-grow: 1;
 }
+.navpage {
+  padding: 100px 0;
+  h1 {
+    font-size: 24px;
+  }
+  ul {
+    font-size: 18px;
+  }
+}
 /* /settings */
