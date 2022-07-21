@@ -358,6 +358,16 @@ body.lock {
   padding: 100px 0;
 }
 
+.js-tabs-trigger.active {
+  color: green;
+}
+.js-tabs-content {
+  display: none;
+}
+.js-tabs-content.open {
+  display: block;
+}
+
 /* /template */
 /* popup */
 .popup {

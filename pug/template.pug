@@ -11,9 +11,10 @@ block content
 
     .content 
 
-      // swiper
-      .swiper
-        .wrapper 
+      .wrapper
+
+        // swiper
+        .swiper
           #swiper.swiper__slider
             .swiper-wrapper 
               .swiper-slide 
@@ -27,20 +28,36 @@ block content
             .swiper-button-next
             //- If we need scrollbar
             .swiper-scrollbar
-      // /swiper
+        // /swiper
 
-      // airDdatepicker
-      .airDdatepicker
-        .wrapper 
+        // airDdatepicker
+        .airDdatepicker
           input(type="text")#airDatepicker
-      // /airDdatepicker
+        // /airDdatepicker
 
-      // magnigicPopup
-      .magnigicPopup
-        .wrapper 
+        // magnigicPopup
+        .magnigicPopup
           a(href="#test-popup").open-popup-link Magnific Popup 
           #test-popup.popup.mfp-hide
             p Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dolor in architecto similique dolorum beatae atque illo! Quaerat quod error, reprehenderit fugit explicabo eligendi quia commodi amet earum aliquid soluta! Omnis, odio illo adipisci quaerat doloremque dolore cupiditate rerum et nemo, molestias natus, a nesciunt excepturi dolores beatae ad autem tempora libero. A quae itaque dolores magnam tempora id labore explicabo animi voluptas possimus ab minima sint, reprehenderit beatae quod ipsa, vitae porro nulla. Quam recusandae iure veritatis, id aut expedita modi, atque facilis nobis accusamus nostrum. Recusandae reiciendis deleniti, debitis, possimus tenetur aspernatur similique non atque eveniet et inventore?
-      // /magnigicPopup
+        // /magnigicPopup
+
+        // tabs
+        .js-tabs
+          ul
+            li 
+              a(href="#tab_1").js-tabs-trigger.active tab_1
+            li 
+              a(href="#tab_2").js-tabs-trigger tab_2
+            li 
+              a(href="#tab_3").js-tabs-trigger tab_3
+          div
+            .js-tabs-content.open(data-href="#tab_1")
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit. Dolorum, eveniet, adipisci! Aperiam soluta, harum obcaecati earum optio libero reprehenderit, fuga. Libero odio eaque deserunt recusandae, maxime quaerat autem! Eligendi inventore laudantium odit magni nihil eos soluta quisquam, unde.
+            .js-tabs-content(data-href="#tab_2")
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit.
+            .js-tabs-content(data-href="#tab_3")
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit. Dolorum, eveniet, adipisci! Aperiam soluta, harum obcaecati earum optio libero reprehenderit, fuga. Libero odio eaque deserunt recusandae, maxime quaerat autem! Eligendi inventore laudantium odit magni nihil eos soluta quisquam, unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus officia, aliquam, nemo est unde nesciunt ipsam iure numquam natus error!
+        // /tabs
 
     include core/footer.pug
