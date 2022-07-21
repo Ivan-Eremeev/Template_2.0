@@ -1,0 +1,15 @@
+.js-tabs {
+  &-trigger {
+    &.active {
+      color: green;
+    }
+  }
+
+  &-content {
+    display: none;
+
+    &.open {
+      display: block;
+    }
+  }
+}

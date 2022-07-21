@@ -15,17 +15,4 @@
   padding: 100px 0;
 }
 
-.js-tabs {
-  &-trigger {
-    &.active {
-      color: green;
-    }   
-  }
-  &-content {
-    display: none;
-    &.open {
-      display: block;
-    }
-  }
-}
 /* /template */
