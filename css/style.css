@@ -415,10 +415,6 @@ body.lock {
 }
 
 /* /popup */
-/* header */
-/* /header */
-/* footer */
-/* /footer */
 .js-tabs-trigger.active {
   color: green;
 }
@@ -428,3 +424,8 @@ body.lock {
 .js-tabs-content.open {
   display: block;
 }
+
+/* header */
+/* /header */
+/* footer */
+/* /footer */
