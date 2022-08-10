@@ -13,6 +13,7 @@
     "gulp-pug": "*",
     "gulp-rename": "*",
     "gulp-sass": "*",
+    "gulp-svg-sprite": "*",
     "gulp-uglify": "*",
     "gulp-webp": "*",
     "imagemin-pngquant": "*",

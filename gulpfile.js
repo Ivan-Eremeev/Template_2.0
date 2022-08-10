@@ -31,7 +31,8 @@ const gulp = require('gulp'),
   imageMin = require('gulp-imagemin'),
   pngquant = require('imagemin-pngquant'),
   plumber = require('gulp-plumber'),
-  webp = require('gulp-webp');
+  webp = require('gulp-webp'),
+  svgSprite = require('gulp-svg-sprite');
 
 gulp.task('pug', function () {
   return gulp.src(pugPath + '/*.pug')
@@ -106,6 +107,42 @@ gulp.task('mg', function () {
     .pipe(browserSync.reload({ stream: true }));
 });
 
+gulp.task('svgsprite', function () {
+  return gulp.src("./img/svg_icons/*.svg")
+    .pipe(svgSprite({
+      shape: {
+        dimension: {
+          maxWidth: 500,
+          maxHeight: 500
+        },
+        spacing: {
+          padding: 0
+        },
+        transform: [{
+          "svgo": {
+            "plugins": [
+              { removeViewBox: false },
+              { removeUnusedNS: false },
+              { removeUselessStrokeAndFill: true },
+              { cleanupIDs: false },
+              { removeComments: true },
+              { removeEmptyAttrs: true },
+              { removeEmptyText: true },
+              { collapseGroups: true },
+              { removeAttrs: { attrs: '(fill|stroke|style)' } }
+            ]
+          }
+        }]
+      },
+      mode: {
+        symbol: {
+          dest: '.',
+          sprite: 'sprite.svg'
+        }
+      }
+    })).on('error', function (error) { console.log(error); })
+    .pipe(gulp.dest("./img/"));
+});
 
 gulp.task('watch', function () {
   gulp.watch(pugPath + '/**/*.pug', gulp.parallel('pug'));
@@ -120,6 +157,7 @@ gulp.task('watch', function () {
     done();
   });
   gulp.watch(scssPath + '/**/*.scss', gulp.parallel('style'));
+  gulp.watch('./img/svg_icons/*.svg', gulp.parallel('svgsprite'));
 });
 
 gulp.task('webp', () =>
@@ -128,6 +166,6 @@ gulp.task('webp', () =>
     .pipe(gulp.dest(imgPath))
 );
 
-gulp.task('default', gulp.parallel('browser-sync', 'pug', 'style', 'watch'));
+gulp.task('default', gulp.parallel('browser-sync', 'pug', 'style', 'svgsprite', 'watch'));
 
 gulp.task('min', gulp.parallel('css-min', 'js-min'));
