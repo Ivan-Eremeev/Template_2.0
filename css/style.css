@@ -199,9 +199,13 @@ body.lock {
 }
 .navpage h1 {
   font-size: 24px;
+  margin-bottom: 20px;
 }
 .navpage ul {
   font-size: 18px;
+}
+.navpage ul li {
+  margin: 10px 0;
 }
 
 /* /settings */
@@ -426,6 +430,36 @@ body.lock {
 }
 
 /* header */
+#headerSticky.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-animation: showStyky 0.5s;
+  animation: showStyky 0.5s;
+}
+
+@-webkit-keyframes showStyky {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes showStyky {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
 /* /header */
 /* footer */
 /* /footer */

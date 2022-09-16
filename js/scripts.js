@@ -1,6 +1,23 @@
 window.onload = function () {
 
-  // Swiper
+  // Липкое меню.
+  function stikyMenu(header) {
+    let headerTop = header.offset().top;
+    headerToggleClass();
+    $(window).scroll(function () {
+      headerToggleClass();
+    });
+    function headerToggleClass() {
+      if ($(window).scrollTop() > headerTop + 150) {
+        header.addClass('stiky');
+      } else {
+        header.removeClass('stiky');
+      }
+    }
+  };
+  stikyMenu($('#headerSticky'));
+
+  // Swiper | Слайдер
   if ($('#swiper').length) {
     const swiper = new Swiper('#swiper', {
       // Optional parameters
@@ -25,12 +42,12 @@ window.onload = function () {
     });
   }
 
-  // Air Datepicker
+  // Air Datepicker | Календарь
   new AirDatepicker('#airDatepicker', {
     position: 'right top',
   });
 
-  // Magnific Popup
+  // Magnific Popup | Попап окна
   $('.open-popup-link').magnificPopup({
     mainClass: 'mfp-fade'
   });
@@ -62,5 +79,18 @@ window.onload = function () {
 		}
 	}
 	tabs();
+
+  // Sticky Sidebar | Липкий сайдбар
+  if ($('.js-sticky').length) {
+    var stickySidebar = new StickySidebar('.js-sticky', {
+      topSpacing: 65,
+      bottomSpacing: 10,
+      containerSelector: false,
+      innerWrapperSelector: '.sidebar__inner',
+      resizeSensor: true,
+      stickyClass: 'is-affixed',
+      minWidth: 0
+    });
+  }
 
 }
