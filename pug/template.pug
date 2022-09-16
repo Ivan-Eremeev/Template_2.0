@@ -60,4 +60,34 @@ block content
               p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit. Dolorum, eveniet, adipisci! Aperiam soluta, harum obcaecati earum optio libero reprehenderit, fuga. Libero odio eaque deserunt recusandae, maxime quaerat autem! Eligendi inventore laudantium odit magni nihil eos soluta quisquam, unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus officia, aliquam, nemo est unde nesciunt ipsam iure numquam natus error!
         // /tabs
 
+        // js-scrollup
+        .js-scrollup
+          svg(class="icon-arrow-up")
+            use(xlink:href="img/sprite.svg#arrow-up")
+        // /js-scrollup
+        
+        // more-list
+        .more-list
+          ul.js-more-list
+            li 1
+            li 2
+            li 3
+            li 4
+            li 5
+            li 6
+          button.js-more-btn Показать еще
+        // /more-list
+
+        // counter
+        .counter.js-counter
+          .counter__btn.js-counter-minus 
+            svg(class="icon-minus")
+              use(xlink:href="img/sprite.svg#minus")
+          .counter__input.js-counter-input
+            input(type="text" value="1" maxlength="3")
+          .counter__btn.js-counter-plus 
+            svg(class="icon-plus")
+              use(xlink:href="img/sprite.svg#plus")
+        // /counter
+
     include core/footer.pug

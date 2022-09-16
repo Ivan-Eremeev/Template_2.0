@@ -93,4 +93,87 @@ window.onload = function () {
     });
   }
 
+  // Кнопка скролла вверх страницы
+  function scrollUp() {
+    const btn = $('.js-scrollup');
+    $(window).scroll(function () {
+      btnShowFade();
+    });
+    function btnShowFade() {
+      if ($(this).scrollTop() > 200) {
+        btn.addClass('show');
+      } else {
+        btn.removeClass('show');
+      }
+    }
+    btnShowFade();
+    btn.click(function () {
+      $('body,html').animate({
+        scrollTop: 0
+      }, 500);
+      return false;
+    });
+  }
+  scrollUp();
+
+  // Показать еще в фильтрах
+  function showMoreFilters() {
+    const list = $('.js-more-list');
+    const btn = $('.js-more-btn');
+    const count = 4;
+    list.each(function () {
+      $(this).find('li').each(function (index) {
+        if (index > count - 1) {
+          $(this).fadeOut();
+        }
+      })
+    })
+    btn.on('click', function () {
+      $(this).fadeOut();
+      $(this).parent().find($('.js-more-list li')).fadeIn();
+    })
+  }
+  showMoreFilters();
+
+  // Очистить фильтр 
+  function clearFilter() {
+    let clearBnt = $('.js-filters-clear');
+    clearBnt.on('click', function () {
+      $(this).closest('.filters').find('input').prop('checked', false);
+    })
+  }
+  clearFilter();
+
+  // Изменение количества товара (плюс минус)
+  function counter(block) {
+    const counter = document.querySelectorAll(block);
+    if (counter) {
+      counter.forEach(element => {
+        const minus = element.querySelector('.js-counter-minus');
+        const plus = element.querySelector('.js-counter-plus');
+        const inputWrap = element.querySelector('.js-counter-input');
+        const input = inputWrap.querySelector('input');
+        plus.addEventListener('click', () => {
+          if (Number(input.value) < 999) {
+            input.value = Number(input.value) + 1;
+          }
+        })
+        minus.addEventListener('click', () => {
+          if (Number(input.value) > 1) {
+            input.value = Number(input.value) - 1;
+          }
+        })
+        input.addEventListener('keyup', () => {
+          input.value = input.value.replace(/[^\d]/g, '');
+        })
+        input.addEventListener('blur', () => {
+          if (input.value == '' || input.value == 0) {
+            input.value = 1;
+          }
+        })
+      });
+    }
+  }
+  counter('.js-counter');
+
 }
