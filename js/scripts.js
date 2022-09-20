@@ -80,6 +80,49 @@ window.onload = function () {
 	}
 	tabs();
 
+  // Аккордеон
+  function accordion(accordion, settings) {
+    if (accordion.length) {
+      $('.js-accordion').each(function () {
+        let currentAccordion = $(this);
+        let trigger = currentAccordion.find('.js-accordion-trigger');
+        let content = $('.js-accordion-content');
+        let time = 300;
+        trigger.on('click', function () {
+          let currentTrigger = $(this);
+          let data = currentTrigger.data('content');
+          if (!currentTrigger.hasClass('active')) {
+            if (settings) {
+              content.stop().slideUp(
+                time,
+                function () {
+                  $(this).removeClass('open');
+                }
+              )
+              trigger.removeClass('active');
+            };
+            currentTrigger.addClass('active');
+            currentAccordion.find('#' + data).stop().slideDown(
+              time,
+              function () {
+                $(this).addClass('open')
+              }
+            );
+          } else {
+            currentTrigger.removeClass('active');
+            currentAccordion.find('#' + data).stop().slideUp(
+              time,
+              function () {
+                $(this).removeClass('open')
+              }
+            );
+          }
+        })
+      })
+    }
+  }
+  accordion($('.js-accordion'), true);
+
   // Sticky Sidebar | Липкий сайдбар
   if ($('.js-sticky').length) {
     var stickySidebar = new StickySidebar('.js-sticky', {
