@@ -9,9 +9,9 @@ window.onload = function () {
     });
     function headerToggleClass() {
       if ($(window).scrollTop() > headerTop + 150) {
-        header.addClass('stiky');
+        header.addClass('sticky');
       } else {
-        header.removeClass('stiky');
+        header.removeClass('sticky');
       }
     }
   };
