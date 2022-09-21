@@ -219,4 +219,38 @@ window.onload = function () {
   }
   counter('.js-counter');
 
+  // noUiSlider || Ползунок выбора
+  if (document.getElementById('noUiSlider')) {
+    const rangeSlider = document.getElementById('noUiSlider');
+    const inputMin = document.getElementById('noUiSliderMin');
+    const inputMax = document.getElementById('noUiSliderMax');
+    let min = Number(rangeSlider.dataset.min);
+    let max = Number(rangeSlider.dataset.max);
+    let nowMin = Number(rangeSlider.dataset.nowmin);
+    let nowMax = Number(rangeSlider.dataset.nowmax);
+    console.log(nowMin,nowMax);
+    noUiSlider.create(rangeSlider, {
+      start: [nowMin, nowMax],
+      connect: true,
+      step: 10,
+      range: {
+        'min': min,
+        'max': max
+      }
+    });
+    rangeSlider.noUiSlider.on('update', function (values, handle) {
+      if (handle) {
+        inputMax.value = values[handle];
+      } else {
+        inputMin.value = values[handle];
+      }
+    });
+    inputMin.addEventListener('change', function () {
+      rangeSlider.noUiSlider.set([this.value, null]);
+    });
+    inputMax.addEventListener('change', function () {
+      rangeSlider.noUiSlider.set([null, this.value]);
+    });
+  };
+
 }
