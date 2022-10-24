@@ -4,19 +4,19 @@
 // "gulp min" - сжимает js, css (создает минимизированные файлы script.min.js и style.min.css).
 // "gulp img-min" - сжимает изображения
 // "gulp webp" - конвертирует изображения jpeg, jpg, png в формат webp
+// "gulp svgsprite" - собирает все svg из папки svg_icons в один svg спрайт
 
 // * Настройки *
-const  html = false; // Нужно ли делать перезагрузку браузера при изменении html файлов (если не используется pug)
+const html = false; // Нужно ли делать перезагрузку браузера при изменении html файлов (если не используется pug)
+const server = true; // Если используется OpenServer и php
 
 // * Пути к папкам относительно корня проекта *
-const scssPath = 'scss', // Scss
-  cssPath = 'css', // Css
+const scssPath = '/assets/scss', // Scss
+  cssPath = '/assets/css', // Css
   pugPath = 'pug', // Pug
   htmlPath = './', // Html
-  jsPath = 'js', // Js
-  imgPath = 'img'; // Изображения
-
-
+  jsPath = '/assets/js', // Js
+  imgPath = '/assets/img'; // Изображения
 
 // Код
 const gulp = require('gulp'),
@@ -56,12 +56,20 @@ gulp.task('style', function () {
 });
 
 gulp.task('browser-sync', function () {
-  browserSync({
-    server: {
-      baseDir: htmlPath
-    },
-    notify: true
-  });
+  if (!server) {
+    browserSync({
+      server: {
+        baseDir: htmlPath
+      },
+      notify: true
+    });
+  } else {
+    browserSync({
+      proxy: 'http://wp-dev.ru/',
+      host: 'wp-dev.ru',
+      open: 'external'
+    });
+  }
 });
 
 gulp.task('css-min', function () {
@@ -108,7 +116,7 @@ gulp.task('mg', function () {
 });
 
 gulp.task('svgsprite', function () {
-  return gulp.src("./img/svg_icons/*.svg")
+  return gulp.src(imgPath + '/svg_icons/*.svg')
     .pipe(svgSprite({
       shape: {
         dimension: {
@@ -141,7 +149,7 @@ gulp.task('svgsprite', function () {
         }
       }
     })).on('error', function (error) { console.log(error); })
-    .pipe(gulp.dest("./img/"));
+    .pipe(gulp.dest(imgPath));
 });
 
 gulp.task('watch', function () {
@@ -153,6 +161,10 @@ gulp.task('watch', function () {
     });
   }
   gulp.watch(jsPath + '/**/*.js', function reload(done) {
+    browserSync.reload();
+    done();
+  });
+  gulp.watch('**/*.php', function reload(done) {
     browserSync.reload();
     done();
   });

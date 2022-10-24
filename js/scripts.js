@@ -8,9 +8,9 @@ window.onload = function () {
       headerToggleClass();
     });
     function headerToggleClass() {
-      if ($(window).scrollTop() > headerTop + 150) {
+      if ($(window).scrollTop() > headerTop + 130) {
         header.addClass('sticky');
-      } else {
+      } else if ($(window).scrollTop() <= headerTop) {
         header.removeClass('sticky');
       }
     }
@@ -252,5 +252,52 @@ window.onload = function () {
       rangeSlider.noUiSlider.set([null, this.value]);
     });
   };
+
+  // Выпадайки при клике по кнопке
+  // Задать блокам выпадайкам айдишник совпадающий с data-drop="" в кнопке для этого блока
+  // Задать кнопкам .js-drop-btn и data-drop="" с айдишником блока выпадайки
+  function dropBlock(btn, lock = false) {
+    let $this = undefined,
+        drop = undefined,
+        close = $('.js-drop-close'),
+        body = $('body');
+    btn.on('click', function () {
+      let $this = $(this);
+      let drop = $('#' + $this.data('drop'));
+      let scrollWidth = (window.innerWidth - $(window).width());
+      if (!$this.hasClass('is-active')) {
+        $this.addClass('is-active');
+        drop.addClass('open');
+        if (lock) {
+          body.toggleClass('lock');
+          body.css('padding-right', scrollWidth);
+        }
+      } else {
+        $this.removeClass('is-active');
+        drop.removeClass('open');
+        body.removeClass('lock');
+        body.css('padding-right', 0);
+      }
+      $(document).mouseup(function (e) {
+        if (!$this.is(e.target)
+          && $this.has(e.target).length === 0
+          && !drop.is(e.target)
+          && drop.has(e.target).length === 0) {
+          $this.removeClass('is-active');
+          drop.removeClass('open');
+          body.removeClass('lock');
+          body.css('padding-right', 0);
+        }
+      });
+    })
+    close.on('click', function () {
+      $('[data-drop="' + $(this).data('drop') +'"]').removeClass('is-active');
+      $('#' + $(this).data('drop')).removeClass('open');
+      body.removeClass('lock');
+      body.css('padding-right', 0);
+    })
+  }
+  dropBlock($('.js-drop-btn'));
+  dropBlock($('.js-drop-menu'), true);
 
 }
