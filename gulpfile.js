@@ -11,12 +11,12 @@ const html = false; // Нужно ли делать перезагрузку б�
 const server = true; // Если используется OpenServer и php
 
 // * Пути к папкам относительно корня проекта *
-const scssPath = '/assets/scss', // Scss
-  cssPath = '/assets/css', // Css
-  pugPath = 'pug', // Pug
+const scssPath = '/scss', // Scss
+  cssPath = '/css', // Css
+  pugPath = '/pug', // Pug
   htmlPath = './', // Html
-  jsPath = '/assets/js', // Js
-  imgPath = '/assets/img'; // Изображения
+  jsPath = '/js', // Js
+  imgPath = '/img'; // Изображения
 
 // Код
 const gulp = require('gulp'),
