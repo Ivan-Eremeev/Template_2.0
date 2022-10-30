@@ -114,7 +114,7 @@ gulp.task('mg', function () {
 });
 
 gulp.task('svgsprite', function () {
-  return gulp.src('/' + imgPath + '/svg_icons/*.svg')
+  return gulp.src(imgPath + '/svg_icons/*.svg')
     .pipe(svgSprite({
       shape: {
         dimension: {
@@ -167,7 +167,7 @@ gulp.task('watch', function () {
     done();
   });
   gulp.watch(scssPath + '/**/*.scss', gulp.parallel('style'));
-  gulp.watch('./img/svg_icons/*.svg', gulp.parallel('svgsprite'));
+  gulp.watch(imgPath + '/svg_icons/*.svg', gulp.parallel('svgsprite'));
 });
 
 gulp.task('webp', () =>
