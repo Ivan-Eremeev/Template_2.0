@@ -93,8 +93,8 @@ gulp.task('js-min', function () {
 });
 
 gulp.task('img-min', function () {
-  return gulp.src(imgPath + '/**/*')
-    .pipe(gulp.dest(imgPath + '-full'))
+  return gulp.src(imgPath + '/*')
+    /* .pipe(gulp.dest(imgPath + '-full')) */
     .pipe(imageMin([
       imageMin.gifsicle(),
       imageMin.mozjpeg(),
