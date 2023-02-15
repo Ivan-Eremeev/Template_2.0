@@ -5,6 +5,7 @@
 // "gulp img-min" - сжимает изображения
 // "gulp webp" - конвертирует изображения jpeg, jpg, png в формат webp
 // "gulp svgsprite" - собирает все svg из папки svg_icons в один svg спрайт
+// "gulp fonts" - конвертирует ttf шрифты в woff и woff2
 
 // * Настройки *
 const html = false; // Нужно ли делать перезагрузку браузера при изменении html файлов (если не используется pug)
@@ -32,7 +33,9 @@ const gulp = require('gulp'),
   pngquant = require('imagemin-pngquant'),
   plumber = require('gulp-plumber'),
   webp = require('gulp-webp'),
-  svgSprite = require('gulp-svg-sprite');
+  svgSprite = require('gulp-svg-sprite'),
+  ttf2woff2 = require('gulp-ttftowoff2'),
+  ttf2woff = require('gulp-ttf2woff');
 
 gulp.task('pug', function () {
   return gulp.src(pugPath + '/*.pug')
@@ -64,7 +67,7 @@ if (!server) {
       notify: true,
     });
   });
-}else {
+} else {
   gulp.task('browser-sync', function () {
     browserSync.init({
       proxy: 'http://wp-dev.ru/',
@@ -95,7 +98,7 @@ gulp.task('js-min', function () {
 });
 
 gulp.task('img-min', function () {
-  return gulp.src(imgPath + '/*')
+  return gulp.src(imgPath + '/**/*')
     /* .pipe(gulp.dest(imgPath + '-full')) */
     .pipe(imageMin([
       imageMin.gifsicle(),
@@ -177,6 +180,20 @@ gulp.task('webp', () =>
     .pipe(webp())
     .pipe(gulp.dest(imgPath))
 );
+
+gulp.task('ttf2woff2', function () {
+  return gulp.src('fonts/**/*.ttf')
+    .pipe(ttf2woff2())
+    .pipe(gulp.dest('fonts'))
+});
+
+gulp.task('ttf2woff', function () {
+  return gulp.src('fonts/**/*.ttf')
+    .pipe(ttf2woff())
+    .pipe(gulp.dest('fonts'))
+});
+
+gulp.task('fonts', gulp.parallel('ttf2woff', 'ttf2woff2'));
 
 gulp.task('default', gulp.parallel('browser-sync', 'pug', 'style', 'svgsprite', 'watch'));
 
