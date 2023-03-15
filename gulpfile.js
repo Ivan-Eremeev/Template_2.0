@@ -96,7 +96,7 @@ gulp.task('js-min', function () {
 });
 
 gulp.task('img-min', function () {
-  return gulp.src(imgPath + '/**/*')
+  return gulp.src([imgPath + '/**/*', '!' + imgPath + '/svg_icons/*'])
     /* .pipe(gulp.dest(imgPath + '-full')) */
     .pipe(imageMin([
       imageMin.gifsicle(),
