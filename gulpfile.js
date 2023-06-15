@@ -10,6 +10,7 @@
 // * Настройки *
 const html = false; // Нужно ли делать перезагрузку браузера при изменении html файлов (если не используется pug)
 const server = false; // Если используется OpenServer и php
+const proxy = 'http://test/'; // Адрес для liveserver
 
 // * Пути к папкам относительно корня проекта *
 const scssPath = 'scss', // Scss
@@ -70,7 +71,7 @@ if (!server) {
 } else {
   gulp.task('browser-sync', function () {
     browserSync.init({
-      proxy: 'http://wp-dev.ru/',
+      proxy: proxy,
     });
   });
 }
