@@ -1,0 +1,86 @@
+/* menu */
+.menu { 
+  &__head {
+    display: none;
+  }
+  &__nav {
+    
+  }
+  &__list {
+    display: flex;
+    margin-left: -20px;
+  }
+  &__item {
+    margin-left: 20px;
+  }
+  &__link {
+    
+  }
+  &__close {
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    &:after,&:before {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 2px;
+      background-color: #000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+    &:after {
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+    &:before {
+      transform: translate(-50%,-50%) rotate(-45deg);
+    }
+  }
+  @include media-breakpoint-down(md) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -500px;
+    z-index: 11;
+    transition: .5s;
+    &__head {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      padding: 10px $grid-gutter-width;
+    }
+    &__body {
+      padding: 10px $grid-gutter-width;
+      flex-grow: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    &__list {
+      display: block;
+    }
+    &__item {
+      
+    }
+    &__link {
+      display: block;
+      padding: 10px 0;
+    }
+    &.open {
+      left: 0;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    max-width: none;
+  }
+}
+/* /menu */

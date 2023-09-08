@@ -1,5 +1,24 @@
 // header
 header#headerSticky.header
-  .wrapper 
-    | header
+  .container 
+    .header__container 
+      a(href="#").header__logo 
+        img(src="img/logo.svg", alt="")
+      // menu
+      .menu
+        .menu__head 
+          .menu__close 
+        .menu__body 
+          nav.menu__nav 
+            ul.menu__list 
+              li.menu__item 
+                a(href="#").menu__link Пункт1
+              li.menu__item 
+                a(href="#").menu__link Пункт2
+              li.menu__item 
+                a(href="#").menu__link Пункт3
+      // /menu
+      .header__hamburger.hamburger.hamburger--squeeze
+        .hamburger-box 
+          .hamburger-inner 
 //	/header

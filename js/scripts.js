@@ -17,6 +17,43 @@ window.onload = function () {
   };
   stikyMenu($('#headerSticky'));
 
+  // Мобильное меню
+  function menuMobile() {
+    let btn = $('.header__hamburger'),
+        menu = $('.menu'),
+        close = $('.menu__close'),
+        body = $('body');
+    btn.on('click', function () {
+      let scrollWidth = (window.innerWidth - $(window).width());
+      if (!btn.hasClass('is-active')) {
+        btn.addClass('is-active');
+        menu.addClass('open');
+        body.addClass('lock').css('padding-right', scrollWidth);
+      } else {
+        btn.removeClass('is-active');
+        menu.removeClass('open');
+        body.removeClass('lock').css('padding-right', 0);
+      }
+      $(document).mouseup(function (e) {
+        if (!btn.is(e.target)
+          && btn.has(e.target).length === 0
+          && !menu.is(e.target)
+          && menu.has(e.target).length === 0) {
+          btn.removeClass('is-active');
+          menu.removeClass('open');
+          body.removeClass('lock').css('padding-right', 0);
+        }
+      });
+    })
+    close.on('click', function () {
+      btn.removeClass('is-active');
+      menu.removeClass('open');
+      body.removeClass('lock');
+      body.css('padding-right', 0);
+    })
+  }
+  menuMobile();
+
   // Выпадайки при клике по кнопке
   // Задать блокам выпадайкам айдишник совпадающий с data-drop="" в кнопке для этого блока
   // Задать кнопкам .js-drop-btn и data-drop="" с айдишником блока выпадайки

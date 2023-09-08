@@ -1,6 +1,29 @@
 /* header */
 .header { 
-  
+  padding: 10px 0;
+  z-index: 10;
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    display: block;
+    max-width: 200px; 
+    margin-right: 50px;
+  }
+  &__hamburger {
+    display: none;
+  }
+  @include media-breakpoint-down(md) {
+    &__hamburger {
+      display: block;
+      padding-right: 0;
+      margin-left: auto;
+      .hamburger-box {
+        display: block;
+      }
+    }
+  }
 }
 
 // stiky menu

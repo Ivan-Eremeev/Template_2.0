@@ -19,33 +19,33 @@ body {
     overflow: hidden;
   }
 }
-.mobile-hide {
-  @media (max-width: $break_xs) {
-    display: none !important;
-  }
-}
-.mobile-visible {
-  @media (min-width: $break_xs + 1) {
-    display: none !important;
-  }
-}
-.tablet-hide {
-  @media (max-width: $break_sm) {
-    display: none !important;
-  }
-}
+// .mobile-hide {
+//   @media (max-width: $break_xs) {
+//     display: none !important;
+//   }
+// }
+// .mobile-visible {
+//   @media (min-width: $break_xs + 1) {
+//     display: none !important;
+//   }
+// }
+// .tablet-hide {
+//   @media (max-width: $break_sm) {
+//     display: none !important;
+//   }
+// }
 
-.tablet-visible {
-  @media (min-width: $break_sm + 1) {
-    display: none !important;
-  }
-}
-.row {
-  @include row();
-}
-.wrapper {
-  @include wrapper();
-}
+// .tablet-visible {
+//   @media (min-width: $break_sm + 1) {
+//     display: none !important;
+//   }
+// }
+// .row {
+//   @include row();
+// }
+// .wrapper {
+//   @include wrapper();
+// }
 *:-webkit-autofill {
   -webkit-box-shadow: inset 0 0 0 50px #fff !important;
 }
