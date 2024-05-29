@@ -6172,6 +6172,7 @@ body.lock {
 }
 
 .content {
+  padding-top: 120px;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
@@ -6540,8 +6541,13 @@ body.lock {
 /* /counter */
 /* header */
 .header {
+  width: 100%;
   padding: 10px 0;
+  background-color: #fff;
   z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .header__container {
   display: -webkit-box;
@@ -6575,6 +6581,8 @@ body.lock {
   top: 0;
   left: 0;
   width: 100%;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   -webkit-animation: showStyky 0.5s;
   animation: showStyky 0.5s;
 }

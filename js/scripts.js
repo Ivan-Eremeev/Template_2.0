@@ -8,7 +8,7 @@ window.onload = function () {
       headerToggleClass();
     });
     function headerToggleClass() {
-      if ($(window).scrollTop() > headerTop + 130) {
+      if ($(window).scrollTop() > headerTop + 200) {
         header.addClass('sticky');
       } else if ($(window).scrollTop() <= headerTop) {
         header.removeClass('sticky');
@@ -182,7 +182,8 @@ window.onload = function () {
         let triggers = $(this).find('.js-tabs-trigger');
         let contents = $(this).find('.js-tabs-content');
         let time = 300;
-        triggers.on('click', function () {
+        triggers.on('click', function (e) {
+          e.preventDefault();
           let trigger = $(this);
           let content = $('.js-tabs-content[data-href="' + trigger.attr('href') +'"]');
           if (!trigger.hasClass('active')) {
@@ -211,7 +212,6 @@ window.onload = function () {
         let trigger = currentAccordion.find('.js-accordion-trigger');
         let content = currentAccordion.find('.js-accordion-content');
         let time = 300;
-        console.log(currentAccordion);
         trigger.on('click', function () {
           let currentTrigger = $(this);
           let data = currentTrigger.data('content');
@@ -288,7 +288,7 @@ window.onload = function () {
 
   // Показать еще пункты списка
   function showMoreFilters(list, count) {
-    let btn = list.find('.js-more-btn');
+    let btn = list.siblings('.js-more-btn');
     list.each(function () {
       $(this).find('li').each(function (index) {
         if (index > count - 1) {
@@ -354,7 +354,6 @@ window.onload = function () {
     let max = Number(rangeSlider.dataset.max);
     let nowMin = Number(rangeSlider.dataset.nowmin);
     let nowMax = Number(rangeSlider.dataset.nowmax);
-    console.log(nowMin,nowMax);
     noUiSlider.create(rangeSlider, {
       start: [nowMin, nowMax],
       connect: true,
@@ -413,5 +412,20 @@ window.onload = function () {
     });
   };
   countNumber($(".count-number"));
+
+  // Изменение высоты textarea под вводимый текст
+  $(function () {
+    $('.eiv-textarea textarea').on('input keyup paste', function () {
+      var $el = $(this),
+        offset = $el.innerHeight() - $el.height();
+
+      if ($el.innerHeight() < this.scrollHeight) {
+        $el.height(this.scrollHeight - offset);
+      } else {
+        $el.height(1);
+        $el.height(this.scrollHeight - offset);
+      }
+    });
+  });
 
 }

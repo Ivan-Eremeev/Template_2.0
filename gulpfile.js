@@ -1,7 +1,7 @@
 // * Команды *
 // "gulp" - запуск gulp.
-// "gulp mg" - группировка всех медиазапросов в конец файла style.css.
-// "gulp min" - сжимает js, css (создает минимизированные файлы script.min.js и style.min.css).
+// "gulp mg" - группировка всех медиазапросов в конец файла main.css.
+// "gulp min" - сжимает js, css (создает минимизированные файлы script.min.js и main.min.css).
 // "gulp img-min" - сжимает изображения
 // "gulp webp" - конвертирует изображения jpeg, jpg, png в формат webp
 // "gulp svgsprite" - собирает все svg из папки svg_icons в один svg спрайт
@@ -77,7 +77,7 @@ if (!server) {
 }
 
 gulp.task('css-min', function () {
-  return gulp.src(cssPath + '/style.css')
+  return gulp.src(cssPath + '/main.css')
     .pipe(cleanCSS({
       level: 2
     }))
@@ -111,7 +111,7 @@ gulp.task('img-min', function () {
 });
 
 gulp.task('mg', function () {
-  return gulp.src(cssPath + '/style.css')
+  return gulp.src(cssPath + '/main.css')
     .pipe(gcmq())
     .pipe(gulp.dest(cssPath));
 });
