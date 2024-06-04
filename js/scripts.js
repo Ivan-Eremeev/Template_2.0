@@ -174,6 +174,24 @@ window.onload = function () {
     mainClass: 'mfp-fade'
   });
 
+  // Вычисление ширины скролла страницы или элемента
+  function calculateScrollbarWidth(element) {
+    if (!element) {
+      return window.innerWidth - document.body.clientWidth;
+    } else {
+      return element.offsetWidth - element.clientWidth;
+    }
+  }
+
+  // Исправление для хедера при появлении модального окна бутстрапа. Исправляет баг с прыжков влево. 
+  $('.modal').on('show.bs.modal', function (e) {
+    $('.modal-open-for-sticky').css('padding-right', calculateScrollbarWidth())
+    console.log();
+  });
+  $('.modal').on('hidden.bs.modal', function (e) {
+    $('.modal-open-for-sticky').css('padding-right', 0)
+  });
+
   // Табы
 	function tabs() {
     const tabs = $('.js-tabs');
