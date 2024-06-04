@@ -112,4 +112,21 @@ block content
         input#noUiSliderMax(type="text", name="rangeMax")
         // /noUiSlider
 
+        // bootstrap modal popup
+        .bootstrapmodalpopup
+          .btn.btn-primary(data-bs-toggle="modal" data-bs-target="#exampleModal") Запустите демо модального окна
+
+          .modal.fade#exampleModal(tabindex="-1")
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  h1 Заголовок модального окна
+                  .btn-close(data-bs-dismiss="modal")
+                .modal-body
+                  p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Ты там агентство первую снова прямо переписывается вскоре меня наш.
+                .modal-footer
+                  .btn.btn-secondary(data-bs-dismiss="modal") Закрыть
+                  .btn.btn-primary Сохранить изменения
+        //bootstrap modal popup
+
     include core/footer.pug
