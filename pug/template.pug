@@ -14,7 +14,10 @@ block content
       .container
 
         // swiper
-        .swiper
+        .template-block
+
+          .template-block__title Swiper
+
           #swiper.swiper__slider
             .swiper-wrapper 
               .swiper-slide 
@@ -31,42 +34,56 @@ block content
         // /swiper
 
         // airDdatepicker
-        .airDdatepicker
-          input(type="text")#airDatepicker
-        // /airDdatepicker
+        .template-block
+
+          .template-block__title AirDatepicker
+
+          .airDdatepicker
+            input(type="text")#airDatepicker
+          // /airDdatepicker
 
         // magnigicPopup
-        .magnigicPopup
+        .template-block
+
+          .template-block__title Magnific Popup
+          
           a(href="#test-popup").open-popup-link Magnific Popup 
           #test-popup.popup.mfp-hide
             p Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dolor in architecto similique dolorum beatae atque illo! Quaerat quod error, reprehenderit fugit explicabo eligendi quia commodi amet earum aliquid soluta! Omnis, odio illo adipisci quaerat doloremque dolore cupiditate rerum et nemo, molestias natus, a nesciunt excepturi dolores beatae ad autem tempora libero. A quae itaque dolores magnam tempora id labore explicabo animi voluptas possimus ab minima sint, reprehenderit beatae quod ipsa, vitae porro nulla. Quam recusandae iure veritatis, id aut expedita modi, atque facilis nobis accusamus nostrum. Recusandae reiciendis deleniti, debitis, possimus tenetur aspernatur similique non atque eveniet et inventore?
         // /magnigicPopup
 
         // tabs
-        .js-tabs
-          ul
-            li 
-              a(href="#tab_1").js-tabs-trigger.active tab_1
-            li 
-              a(href="#tab_2").js-tabs-trigger tab_2
-            li 
-              a(href="#tab_3").js-tabs-trigger tab_3
-          div
-            .js-tabs-content.open(data-href="#tab_1")
-              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit. Dolorum, eveniet, adipisci! Aperiam soluta, harum obcaecati earum optio libero reprehenderit, fuga. Libero odio eaque deserunt recusandae, maxime quaerat autem! Eligendi inventore laudantium odit magni nihil eos soluta quisquam, unde.
-            .js-tabs-content(data-href="#tab_2")
-              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit.
-            .js-tabs-content(data-href="#tab_3")
-              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit. Dolorum, eveniet, adipisci! Aperiam soluta, harum obcaecati earum optio libero reprehenderit, fuga. Libero odio eaque deserunt recusandae, maxime quaerat autem! Eligendi inventore laudantium odit magni nihil eos soluta quisquam, unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus officia, aliquam, nemo est unde nesciunt ipsam iure numquam natus error!
+        .template-block
+
+          .template-block__title Tabs
+
+          .js-tabs
+            ul
+              li 
+                a(href="#tab_1").js-tabs-trigger.active tab_1
+              li 
+                a(href="#tab_2").js-tabs-trigger tab_2
+              li 
+                a(href="#tab_3").js-tabs-trigger tab_3
+            div
+              .js-tabs-content.open(data-href="#tab_1")
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit. Dolorum, eveniet, adipisci! Aperiam soluta, harum obcaecati earum optio libero reprehenderit, fuga. Libero odio eaque deserunt recusandae, maxime quaerat autem! Eligendi inventore laudantium odit magni nihil eos soluta quisquam, unde.
+              .js-tabs-content(data-href="#tab_2")
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit.
+              .js-tabs-content(data-href="#tab_3")
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit. Dolorum, eveniet, adipisci! Aperiam soluta, harum obcaecati earum optio libero reprehenderit, fuga. Libero odio eaque deserunt recusandae, maxime quaerat autem! Eligendi inventore laudantium odit magni nihil eos soluta quisquam, unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus officia, aliquam, nemo est unde nesciunt ipsam iure numquam natus error!
         // /tabs
 
-        // js-scrollup
+        // scrollup
         .js-scrollup
           svg(class="icon-arrow-up")
             use(xlink:href="img/sprite.svg#arrow-up")
-        // /js-scrollup
+        // /scrollup
         
         // more-list
+
+        .template-block__title More list 
+
         .more-list
           ul.js-more-list
             li 1
@@ -79,55 +96,97 @@ block content
         // /more-list
 
         // counter
-        .counter.js-counter
-          .counter__btn.js-counter-minus 
-            svg(class="icon-minus")
-              use(xlink:href="img/sprite.svg#minus")
-          .counter__input.js-counter-input
-            input(type="text" value="1" maxlength="3")
-          .counter__btn.js-counter-plus 
-            svg(class="icon-plus")
-              use(xlink:href="img/sprite.svg#plus")
+        .template-block
+
+          .template-block__title Counter
+
+          .counter.js-counter
+            .counter__btn.js-counter-minus 
+              svg(class="icon-minus")
+                use(xlink:href="img/sprite.svg#minus")
+            .counter__input.js-counter-input
+              input(type="text" value="1" maxlength="3")
+            .counter__btn.js-counter-plus 
+              svg(class="icon-plus")
+                use(xlink:href="img/sprite.svg#plus")
         // /counter
 
         // accordion
-        .accordion.js-accordion
-          .accordion__item
-            .accordion__trigger.js-accordion-trigger.active(data-content="trigger_1") triger 1
-            #trigger_1.accordion__content.js-accordion-content.open
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel consequatur, obcaecati repellendus laboriosam at quos, similique saepe hic vero fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam temporibus officia molestias assumenda, sint deserunt nemo quas dolores fuga maxime, soluta provident blanditiis magni ipsum totam expedita quasi ipsa.
-          .accordion__item
-            .accordion__trigger.js-accordion-trigger(data-content="trigger_2") triger 2
-            #trigger_2.accordion__content.js-accordion-content
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel consequatur, obcaecati repellendus laboriosam at quos, similique saepe hic vero fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam temporibus officia molestias assumenda, sint deserunt nemo quas dolores fuga maxime, soluta provident blanditiis magni ipsum totam expedita quasi ipsa.
-          .accordion__item
-            .accordion__trigger.js-accordion-trigger(data-content="trigger_3") triger 3
-            #trigger_3.accordion__content.js-accordion-content
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel consequatur, obcaecati repellendus laboriosam at quos, similique saepe hic vero fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam temporibus officia molestias assumenda, sint deserunt nemo quas dolores fuga maxime, soluta provident blanditiis magni ipsum totam expedita quasi ipsa.
+        .template-block
+
+          .template-block__title Accordion
+
+          .accordion.js-accordion
+            .accordion__item
+              .accordion__trigger.js-accordion-trigger.active(data-content="trigger_1") triger 1
+              #trigger_1.accordion__content.js-accordion-content.open
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel consequatur, obcaecati repellendus laboriosam at quos, similique saepe hic vero fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam temporibus officia molestias assumenda, sint deserunt nemo quas dolores fuga maxime, soluta provident blanditiis magni ipsum totam expedita quasi ipsa.
+            .accordion__item
+              .accordion__trigger.js-accordion-trigger(data-content="trigger_2") triger 2
+              #trigger_2.accordion__content.js-accordion-content
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel consequatur, obcaecati repellendus laboriosam at quos, similique saepe hic vero fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam temporibus officia molestias assumenda, sint deserunt nemo quas dolores fuga maxime, soluta provident blanditiis magni ipsum totam expedita quasi ipsa.
+            .accordion__item
+              .accordion__trigger.js-accordion-trigger(data-content="trigger_3") triger 3
+              #trigger_3.accordion__content.js-accordion-content
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel consequatur, obcaecati repellendus laboriosam at quos, similique saepe hic vero fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam temporibus officia molestias assumenda, sint deserunt nemo quas dolores fuga maxime, soluta provident blanditiis magni ipsum totam expedita quasi ipsa.
         // /accordion
 
         // noUiSlider
-        #noUiSlider(data-min="0" data-max="1000" data-nowmin="100" data-nowmax="700")
-        input#noUiSliderMin(type="text", name="rangeMin")
-        input#noUiSliderMax(type="text", name="rangeMax")
+        .template-block
+
+          .template-block__title noUiSlider
+
+          #noUiSlider(data-min="0" data-max="1000" data-nowmin="100" data-nowmax="700")
+          input#noUiSliderMin(type="text", name="rangeMin")
+          input#noUiSliderMax(type="text", name="rangeMax")
         // /noUiSlider
 
-        // bootstrap modal popup
-        .bootstrapmodalpopup
+        // bootstrap-modal-popup
+        .template-block
 
-          .btn.btn-primary(data-bs-toggle="modal" data-bs-target="#exampleModal") Запустите демо модального окна
+          .template-block__title Bootstrap Modal
 
-          .modal.fade#exampleModal(tabindex="-1")
-            .modal-dialog
-              .modal-content
-                .modal-header
-                  h1 Заголовок модального окна
-                  .btn-close(data-bs-dismiss="modal")
-                .modal-body
-                  p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Ты там агентство первую снова прямо переписывается вскоре меня наш.
-                .modal-footer
-                  .btn.btn-secondary(data-bs-dismiss="modal") Закрыть
-                  .btn.btn-primary Сохранить изменения
-        //bootstrap modal popup
+          .bootstrap-modal-popup
+
+            .btn.btn-primary(data-bs-toggle="modal" data-bs-target="#exampleModal") Запустите демо модального окна
+
+            .modal.fade#exampleModal(tabindex="-1")
+              .modal-dialog
+                .modal-content
+                  .modal-header
+                    h1 Заголовок модального окна
+                    .btn-close(data-bs-dismiss="modal")
+                  .modal-body
+                    p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Ты там агентство первую снова прямо переписывается вскоре меня наш.
+                  .modal-footer
+                    .btn.btn-secondary(data-bs-dismiss="modal") Закрыть
+                    .btn.btn-primary Сохранить изменения
+        //bootstrap-modal-popup
+
+        // bootstrap-accordion
+        .template-block
+
+          .template-block__title Bootstrap Accordion
+
+          .accordion#accordionExample
+            .accordion-item
+              .accordion-header
+                .accordion-button(data-bs-toggle="collapse" data-bs-target="#collapse1") Элемент аккордеона #1
+              .accordion-collapse.collapse.show#collapse1(data-bs-parent="#accordionExample")
+                .accordion-body
+                  p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал, большого? Образ ipsum предупредила великий что грустный безопасную коварный от всех сбить своего использовало заглавных большой толку предупреждал, повстречался грамматики рыбного продолжил собрал правилами, однажды вскоре путь. Продолжил, пояс скатился!
+            .accordion-item
+              .accordion-header
+                .accordion-button.collapsed(data-bs-toggle="collapse" data-bs-target="#collapse2") Элемент аккордеона #2
+              .accordion-collapse.collapse#collapse2(data-bs-parent="#accordionExample")
+                .accordion-body
+                  p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал, большого? Образ ipsum предупредила великий что грустный безопасную коварный от всех сбить своего использовало заглавных большой толку предупреждал, повстречался грамматики рыбного продолжил собрал правилами, однажды вскоре путь. Продолжил, пояс скатился!
+            .accordion-item
+              .accordion-header
+                .accordion-button.collapsed(data-bs-toggle="collapse" data-bs-target="#collapse3") Элемент аккордеона #3
+              .accordion-collapse.collapse#collapse3(data-bs-parent="#accordionExample")
+                .accordion-body
+                  p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал, большого? Образ ipsum предупредила великий что грустный безопасную коварный от всех сбить своего использовало заглавных большой толку предупреждал, повстречался грамматики рыбного продолжил собрал правилами, однажды вскоре путь. Продолжил, пояс скатился!
+        // /bootstrap-accordion
 
     include core/footer.pug

@@ -48,7 +48,8 @@
 			<div class="content"> 
 				<div class="container">
 					<!-- swiper-->
-					<div class="swiper">
+					<div class="template-block">
+						<div class="template-block__title">Swiper</div>
 						<div class="swiper__slider" id="swiper">
 							<div class="swiper-wrapper"> 
 								<div class="swiper-slide"> 
@@ -66,45 +67,53 @@
 					</div>
 					<!-- /swiper-->
 					<!-- airDdatepicker-->
-					<div class="airDdatepicker">
-						<input type="text" id="airDatepicker">
+					<div class="template-block">
+						<div class="template-block__title">AirDatepicker</div>
+						<div class="airDdatepicker">
+							<input type="text" id="airDatepicker">
+						</div>
+						<!-- /airDdatepicker-->
 					</div>
-					<!-- /airDdatepicker-->
 					<!-- magnigicPopup-->
-					<div class="magnigicPopup"><a class="open-popup-link" href="#test-popup">Magnific Popup </a>
+					<div class="template-block">
+						<div class="template-block__title">Magnific Popup</div><a class="open-popup-link" href="#test-popup">Magnific Popup </a>
 						<div class="popup mfp-hide" id="test-popup">
 							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error dolor in architecto similique dolorum beatae atque illo! Quaerat quod error, reprehenderit fugit explicabo eligendi quia commodi amet earum aliquid soluta! Omnis, odio illo adipisci quaerat doloremque dolore cupiditate rerum et nemo, molestias natus, a nesciunt excepturi dolores beatae ad autem tempora libero. A quae itaque dolores magnam tempora id labore explicabo animi voluptas possimus ab minima sint, reprehenderit beatae quod ipsa, vitae porro nulla. Quam recusandae iure veritatis, id aut expedita modi, atque facilis nobis accusamus nostrum. Recusandae reiciendis deleniti, debitis, possimus tenetur aspernatur similique non atque eveniet et inventore?</p>
 						</div>
 					</div>
 					<!-- /magnigicPopup-->
 					<!-- tabs-->
-					<div class="js-tabs">
-						<ul>
-							<li> <a class="js-tabs-trigger active" href="#tab_1">tab_1</a></li>
-							<li> <a class="js-tabs-trigger" href="#tab_2">tab_2</a></li>
-							<li> <a class="js-tabs-trigger" href="#tab_3">tab_3</a></li>
-						</ul>
-						<div>
-							<div class="js-tabs-content open" data-href="#tab_1">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit. Dolorum, eveniet, adipisci! Aperiam soluta, harum obcaecati earum optio libero reprehenderit, fuga. Libero odio eaque deserunt recusandae, maxime quaerat autem! Eligendi inventore laudantium odit magni nihil eos soluta quisquam, unde.</p>
-							</div>
-							<div class="js-tabs-content" data-href="#tab_2">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit.</p>
-							</div>
-							<div class="js-tabs-content" data-href="#tab_3">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit. Dolorum, eveniet, adipisci! Aperiam soluta, harum obcaecati earum optio libero reprehenderit, fuga. Libero odio eaque deserunt recusandae, maxime quaerat autem! Eligendi inventore laudantium odit magni nihil eos soluta quisquam, unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus officia, aliquam, nemo est unde nesciunt ipsam iure numquam natus error!</p>
+					<div class="template-block">
+						<div class="template-block__title">Tabs</div>
+						<div class="js-tabs">
+							<ul>
+								<li> <a class="js-tabs-trigger active" href="#tab_1">tab_1</a></li>
+								<li> <a class="js-tabs-trigger" href="#tab_2">tab_2</a></li>
+								<li> <a class="js-tabs-trigger" href="#tab_3">tab_3</a></li>
+							</ul>
+							<div>
+								<div class="js-tabs-content open" data-href="#tab_1">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit. Dolorum, eveniet, adipisci! Aperiam soluta, harum obcaecati earum optio libero reprehenderit, fuga. Libero odio eaque deserunt recusandae, maxime quaerat autem! Eligendi inventore laudantium odit magni nihil eos soluta quisquam, unde.</p>
+								</div>
+								<div class="js-tabs-content" data-href="#tab_2">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit.</p>
+								</div>
+								<div class="js-tabs-content" data-href="#tab_3">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt assumenda quod fugit, eos dolorem ut ex inventore facere non sit. Dolorum, eveniet, adipisci! Aperiam soluta, harum obcaecati earum optio libero reprehenderit, fuga. Libero odio eaque deserunt recusandae, maxime quaerat autem! Eligendi inventore laudantium odit magni nihil eos soluta quisquam, unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus officia, aliquam, nemo est unde nesciunt ipsam iure numquam natus error!</p>
+								</div>
 							</div>
 						</div>
 					</div>
 					<!-- /tabs-->
-					<!-- js-scrollup-->
+					<!-- scrollup-->
 					<div class="js-scrollup">
 						<svg class="icon-arrow-up">
 							<use xlink:href="img/sprite.svg#arrow-up"></use>
 						</svg>
 					</div>
-					<!-- /js-scrollup-->
+					<!-- /scrollup-->
 					<!-- more-list-->
+					<div class="template-block__title">More list </div>
 					<div class="more-list">
 						<ul class="js-more-list">
 							<li>1</li>
@@ -118,65 +127,114 @@
 					</div>
 					<!-- /more-list-->
 					<!-- counter-->
-					<div class="counter js-counter">
-						<div class="counter__btn js-counter-minus"> 
-							<svg class="icon-minus">
-								<use xlink:href="img/sprite.svg#minus"></use>
-							</svg>
-						</div>
-						<div class="counter__input js-counter-input">
-							<input type="text" value="1" maxlength="3">
-						</div>
-						<div class="counter__btn js-counter-plus"> 
-							<svg class="icon-plus">
-								<use xlink:href="img/sprite.svg#plus"></use>
-							</svg>
+					<div class="template-block">
+						<div class="template-block__title">Counter</div>
+						<div class="counter js-counter">
+							<div class="counter__btn js-counter-minus"> 
+								<svg class="icon-minus">
+									<use xlink:href="img/sprite.svg#minus"></use>
+								</svg>
+							</div>
+							<div class="counter__input js-counter-input">
+								<input type="text" value="1" maxlength="3">
+							</div>
+							<div class="counter__btn js-counter-plus"> 
+								<svg class="icon-plus">
+									<use xlink:href="img/sprite.svg#plus"></use>
+								</svg>
+							</div>
 						</div>
 					</div>
 					<!-- /counter-->
 					<!-- accordion-->
-					<div class="accordion js-accordion">
-						<div class="accordion__item">
-							<div class="accordion__trigger js-accordion-trigger active" data-content="trigger_1">triger 1</div>
-							<div class="accordion__content js-accordion-content open" id="trigger_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel consequatur, obcaecati repellendus laboriosam at quos, similique saepe hic vero fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam temporibus officia molestias assumenda, sint deserunt nemo quas dolores fuga maxime, soluta provident blanditiis magni ipsum totam expedita quasi ipsa.</div>
-						</div>
-						<div class="accordion__item">
-							<div class="accordion__trigger js-accordion-trigger" data-content="trigger_2">triger 2</div>
-							<div class="accordion__content js-accordion-content" id="trigger_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel consequatur, obcaecati repellendus laboriosam at quos, similique saepe hic vero fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam temporibus officia molestias assumenda, sint deserunt nemo quas dolores fuga maxime, soluta provident blanditiis magni ipsum totam expedita quasi ipsa.</div>
-						</div>
-						<div class="accordion__item">
-							<div class="accordion__trigger js-accordion-trigger" data-content="trigger_3">triger 3</div>
-							<div class="accordion__content js-accordion-content" id="trigger_3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel consequatur, obcaecati repellendus laboriosam at quos, similique saepe hic vero fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam temporibus officia molestias assumenda, sint deserunt nemo quas dolores fuga maxime, soluta provident blanditiis magni ipsum totam expedita quasi ipsa.</div>
+					<div class="template-block">
+						<div class="template-block__title">Accordion</div>
+						<div class="accordion js-accordion">
+							<div class="accordion__item">
+								<div class="accordion__trigger js-accordion-trigger active" data-content="trigger_1">triger 1</div>
+								<div class="accordion__content js-accordion-content open" id="trigger_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel consequatur, obcaecati repellendus laboriosam at quos, similique saepe hic vero fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam temporibus officia molestias assumenda, sint deserunt nemo quas dolores fuga maxime, soluta provident blanditiis magni ipsum totam expedita quasi ipsa.</div>
+							</div>
+							<div class="accordion__item">
+								<div class="accordion__trigger js-accordion-trigger" data-content="trigger_2">triger 2</div>
+								<div class="accordion__content js-accordion-content" id="trigger_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel consequatur, obcaecati repellendus laboriosam at quos, similique saepe hic vero fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam temporibus officia molestias assumenda, sint deserunt nemo quas dolores fuga maxime, soluta provident blanditiis magni ipsum totam expedita quasi ipsa.</div>
+							</div>
+							<div class="accordion__item">
+								<div class="accordion__trigger js-accordion-trigger" data-content="trigger_3">triger 3</div>
+								<div class="accordion__content js-accordion-content" id="trigger_3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel consequatur, obcaecati repellendus laboriosam at quos, similique saepe hic vero fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet quibusdam temporibus officia molestias assumenda, sint deserunt nemo quas dolores fuga maxime, soluta provident blanditiis magni ipsum totam expedita quasi ipsa.</div>
+							</div>
 						</div>
 					</div>
 					<!-- /accordion-->
 					<!-- noUiSlider-->
-					<div id="noUiSlider" data-min="0" data-max="1000" data-nowmin="100" data-nowmax="700"></div>
-					<input id="noUiSliderMin" type="text" name="rangeMin">
-					<input id="noUiSliderMax" type="text" name="rangeMax">
+					<div class="template-block">
+						<div class="template-block__title">noUiSlider</div>
+						<div id="noUiSlider" data-min="0" data-max="1000" data-nowmin="100" data-nowmax="700"></div>
+						<input id="noUiSliderMin" type="text" name="rangeMin">
+						<input id="noUiSliderMax" type="text" name="rangeMax">
+					</div>
 					<!-- /noUiSlider-->
-					<!-- bootstrap modal popup-->
-					<div class="bootstrapmodalpopup">
-						<div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Запустите демо модального окна</div>
-						<div class="modal fade" id="exampleModal" tabindex="-1">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h1>Заголовок модального окна</h1>
-										<div class="btn-close" data-bs-dismiss="modal"></div>
-									</div>
-									<div class="modal-body">
-										<p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Ты там агентство первую снова прямо переписывается вскоре меня наш.</p>
-									</div>
-									<div class="modal-footer">
-										<div class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</div>
-										<div class="btn btn-primary">Сохранить изменения</div>
+					<!-- bootstrap-modal-popup-->
+					<div class="template-block">
+						<div class="template-block__title">Bootstrap Modal</div>
+						<div class="bootstrap-modal-popup">
+							<div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Запустите демо модального окна</div>
+							<div class="modal fade" id="exampleModal" tabindex="-1">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h1>Заголовок модального окна</h1>
+											<div class="btn-close" data-bs-dismiss="modal"></div>
+										</div>
+										<div class="modal-body">
+											<p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Ты там агентство первую снова прямо переписывается вскоре меня наш.</p>
+										</div>
+										<div class="modal-footer">
+											<div class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</div>
+											<div class="btn btn-primary">Сохранить изменения</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!--bootstrap modal popup-->
+					<!--bootstrap-modal-popup-->
+					<!-- bootstrap-accordion-->
+					<div class="template-block">
+						<div class="template-block__title">Bootstrap Accordion</div>
+						<div class="accordion" id="accordionExample">
+							<div class="accordion-item">
+								<div class="accordion-header">
+									<div class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapse1">Элемент аккордеона #1</div>
+								</div>
+								<div class="accordion-collapse collapse show" id="collapse1" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал, большого? Образ ipsum предупредила великий что грустный безопасную коварный от всех сбить своего использовало заглавных большой толку предупреждал, повстречался грамматики рыбного продолжил собрал правилами, однажды вскоре путь. Продолжил, пояс скатился!</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<div class="accordion-header">
+									<div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse2">Элемент аккордеона #2</div>
+								</div>
+								<div class="accordion-collapse collapse" id="collapse2" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал, большого? Образ ipsum предупредила великий что грустный безопасную коварный от всех сбить своего использовало заглавных большой толку предупреждал, повстречался грамматики рыбного продолжил собрал правилами, однажды вскоре путь. Продолжил, пояс скатился!</p>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-item">
+								<div class="accordion-header">
+									<div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse3">Элемент аккордеона #3</div>
+								</div>
+								<div class="accordion-collapse collapse" id="collapse3" data-bs-parent="#accordionExample">
+									<div class="accordion-body">
+										<p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал, большого? Образ ipsum предупредила великий что грустный безопасную коварный от всех сбить своего использовало заглавных большой толку предупреждал, повстречался грамматики рыбного продолжил собрал правилами, однажды вскоре путь. Продолжил, пояс скатился!</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /bootstrap-accordion-->
 				</div>
 			</div>
 			<!-- footer-->
