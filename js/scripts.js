@@ -283,7 +283,7 @@ window.onload = function () {
 
   // Кнопка скролла вверх страницы
   function scrollUp() {
-    const btn = $('.js-scrollup');
+    const btn = $('.scrollup');
     $(window).scroll(function () {
       btnShowFade();
     });

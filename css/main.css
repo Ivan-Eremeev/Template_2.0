@@ -7593,7 +7593,7 @@ body.lock {
 
 /* /accordion */
 /* js-scrollup */
-.js-scrollup {
+.scrollup {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7625,11 +7625,11 @@ body.lock {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
-.js-scrollup svg {
+.scrollup svg {
   width: 10px;
   height: 10px;
 }
-.js-scrollup.show {
+.scrollup.show {
   opacity: 1;
   -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
@@ -7695,6 +7695,22 @@ body.lock {
 }
 
 /* /counter */
+.swiper-button-prev {
+  z-index: 1;
+}
+
+.swiper-button-next {
+  z-index: 1;
+}
+
+.swiper-pagination {
+  z-index: 1;
+}
+
+.swiper-horizontal > .swiper-scrollbar {
+  z-index: 1;
+}
+
 /* header */
 .header {
   width: 100%;
