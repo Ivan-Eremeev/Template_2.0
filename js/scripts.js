@@ -446,4 +446,13 @@ window.onload = function () {
     });
   });
 
+  // AOS || Анимация появления блоков
+  AOS.init();
+
+  // Autosize || Изменяющаяся высота textarea по контенту
+  autosize(document.querySelectorAll('textarea'));
+
+  // Inputmask || Маски для инпутов
+  $('input[type=tel]').inputmask("+7 999-999-99-99");
+
 }
