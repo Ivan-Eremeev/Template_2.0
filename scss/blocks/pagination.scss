@@ -1,0 +1,24 @@
+/* pagination */
+.pagination { 
+  &__list {
+    display: flex;
+    margin-left: -10px;
+  }
+  &__item {
+    margin-left: 10px;
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    fill: #fff;
+    color: #fff;
+    svg {
+      max-height: 100%;
+    }
+  }
+}
+/* /pagination */

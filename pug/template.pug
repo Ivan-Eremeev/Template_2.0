@@ -207,4 +207,52 @@ block content
         
         // /bootstrap-tabs
 
+        // aos
+        .template-block
+
+          .template-block__title AOS
+
+          .aos(data-aos="fade-up")
+        // /aos
+
+        // autosize
+        .template-block 
+
+          .template-block__title Autosize
+
+          textarea.autosize
+        // /autosize
+
+        // inputmask
+        .template-block 
+
+          .template-block__title Inputmask
+          
+          input(type="tel")
+        // /inputmask
+
+        // pagination
+        .template-block 
+
+          .template-block__title Pagination
+
+          nav.pagination
+            ul.pagination__list 
+              li.pagination__item 
+                a(href="#").pagination__link 
+                  svg(class="icon-arrow-left")
+                    use(xlink:href="img/sprite.svg#arrow-left")
+              li.pagination__item 
+                a(href="#").pagination__link 1
+              li.pagination__item 
+                a(href="#").pagination__link 2
+              li.pagination__item 
+                a(href="#").pagination__link 3
+              li.pagination__item 
+                a(href="#").pagination__link 
+                  svg(class="icon-arrow-right")
+                    use(xlink:href="img/sprite.svg#arrow-right")
+
+        // /pagination
+
     include core/footer.pug

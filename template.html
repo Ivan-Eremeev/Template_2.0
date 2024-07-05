@@ -8,6 +8,7 @@
 		<meta name="description" content="">
 		<meta name="robots" content="noindex, nofollow">
 		<title>Главная</title>
+		<link rel="stylesheet" href="css/plugins/aos.css">
 		<link rel="stylesheet" href="css/plugins/swiper-bundle.min.css">
 		<link rel="stylesheet" href="css/plugins/air-datepicker.css">
 		<link rel="stylesheet" href="css/plugins/magnific-popup.css">
@@ -44,7 +45,7 @@
 					</div>
 				</div>
 			</header>
-			<!--	/header-->
+			<!-- /header-->
 			<div class="content"> 
 				<div class="container">
 					<!-- swiper-->
@@ -252,6 +253,44 @@
 						</div>
 					</div>
 					<!-- /bootstrap-tabs-->
+					<!-- aos-->
+					<div class="template-block">
+						<div class="template-block__title">AOS</div>
+						<div class="aos" data-aos="fade-up"></div>
+					</div>
+					<!-- /aos-->
+					<!-- autosize-->
+					<div class="template-block"> 
+						<div class="template-block__title">Autosize</div>
+						<textarea class="autosize"></textarea>
+					</div>
+					<!-- /autosize-->
+					<!-- inputmask-->
+					<div class="template-block"> 
+						<div class="template-block__title">Inputmask</div>
+						<input type="tel">
+					</div>
+					<!-- /inputmask-->
+					<!-- pagination-->
+					<div class="template-block"> 
+						<div class="template-block__title">Pagination</div>
+						<nav class="pagination">
+							<ul class="pagination__list"> 
+								<li class="pagination__item"> <a class="pagination__link" href="#"> 
+										<svg class="icon-arrow-left">
+											<use xlink:href="img/sprite.svg#arrow-left"></use>
+										</svg></a></li>
+								<li class="pagination__item"> <a class="pagination__link" href="#">1</a></li>
+								<li class="pagination__item"> <a class="pagination__link" href="#">2</a></li>
+								<li class="pagination__item"> <a class="pagination__link" href="#">3</a></li>
+								<li class="pagination__item"> <a class="pagination__link" href="#"> 
+										<svg class="icon-arrow-right">
+											<use xlink:href="img/sprite.svg#arrow-right"></use>
+										</svg></a></li>
+							</ul>
+						</nav>
+					</div>
+					<!-- /pagination-->
 				</div>
 			</div>
 			<!-- footer-->
@@ -260,7 +299,10 @@
 			</footer>
 			<!--	/footer-->
 		</div>
-		<script src="js/jquery.min.js"> </script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/plugins/jquery.inputmask.min.js"></script>
+		<script src="js/plugins/autosize.min.js"></script>
+		<script src="js/plugins/aos.js"></script>
 		<script src="js/plugins/bootstrap.bundle.min.js"> </script>
 		<script src="js/plugins/swiper-bundle.min.js"> </script>
 		<script src="js/plugins/air-datepicker.js"> </script>
