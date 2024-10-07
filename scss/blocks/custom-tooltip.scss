@@ -1,0 +1,10 @@
+.custom-tooltip {
+  .tooltip-inner {
+    background-color: red;
+  }
+  .tooltip-arrow {
+    &:before {
+      border-top-color: red !important;
+    }
+  }
+}
