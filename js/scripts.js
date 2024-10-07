@@ -183,7 +183,7 @@ window.onload = function () {
     }
   }
 
-  // Исправление для хедера при появлении модального окна бутстрапа. Исправляет баг с прыжков влево. 
+  // Исправление для хедера при появлении модального окна бутстрапа. Исправляет баг с прыжком влево. 
   $('.modal').on('show.bs.modal', function (e) {
     $('.modal-open-for-sticky').css('padding-right', calculateScrollbarWidth())
     console.log();
@@ -446,7 +446,7 @@ window.onload = function () {
     });
   });
 
-  // AOS || Анимация появления блоков
+  // AOS || Анимация появления блоков при скролле
   AOS.init();
 
   // Autosize || Изменяющаяся высота textarea по контенту
