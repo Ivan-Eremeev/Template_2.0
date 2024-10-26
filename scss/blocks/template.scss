@@ -22,4 +22,22 @@
   height: 100px;
   resize: none;
 }
+
+.pagepiling {
+  &__block {
+    padding: 100px 0;
+    &--1 {
+      background-color: red;
+    }
+    &--2 {
+      background-color: green;
+    }
+    &--3 {
+      background-color: blue;
+    }
+    &--4 {
+      background-color: purple;
+    }
+  }
+}
 /* /template */

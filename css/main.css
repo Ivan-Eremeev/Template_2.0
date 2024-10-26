@@ -7624,6 +7624,22 @@ body.lock {
   resize: none;
 }
 
+.pagepiling__block {
+  padding: 100px 0;
+}
+.pagepiling__block--1 {
+  background-color: red;
+}
+.pagepiling__block--2 {
+  background-color: green;
+}
+.pagepiling__block--3 {
+  background-color: blue;
+}
+.pagepiling__block--4 {
+  background-color: purple;
+}
+
 /* /template */
 /* popup */
 .popup {

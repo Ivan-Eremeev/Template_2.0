@@ -1,0 +1,25 @@
+extends core/base.pug
+
+block title 
+  title Главная
+
+block content
+
+  include core/header.pug
+
+  // pagepiling
+  .template-block
+
+
+    .pagepiling#pagepiling
+      .pagepiling__block.pagepiling__block--1.section
+        .container
+
+          .template-block__title Поэкранный скролл
+      .pagepiling__block.pagepiling__block--2.section
+      .pagepiling__block.pagepiling__block--3.section
+      .pagepiling__block.pagepiling__block--4.section
+
+  // /pagepiling
+
+  include core/footer.pug

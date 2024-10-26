@@ -7,7 +7,7 @@
 		<meta name="keywords" content="">
 		<meta name="description" content="">
 		<meta name="robots" content="noindex, nofollow">
-		<title>Навигация по страницам</title>
+		<title>Главная</title>
 		<link rel="stylesheet" href="css/plugins/jquery.pagepiling.min.css">
 		<link rel="stylesheet" href="css/plugins/aos.css">
 		<link rel="stylesheet" href="css/plugins/swiper-bundle.min.css">
@@ -17,53 +17,54 @@
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body> 
-		<div class="page"> 
-			<!-- header-->
-			<header class="header modal-open-for-sticky" id="headerSticky">
-				<div class="container"> 
-					<div class="header__container"> <a class="header__logo" href="#"> <img src="img/logo.svg" alt=""></a>
-						<!-- menu-->
-						<div class="menu">
-							<div class="menu__head"> 
-								<div class="menu__close"> </div>
-							</div>
-							<div class="menu__body"> 
-								<nav class="menu__nav"> 
-									<ul class="menu__list"> 
-										<li class="menu__item"> <a class="menu__link" href="#">Пункт1</a></li>
-										<li class="menu__item"> <a class="menu__link" href="#">Пункт2</a></li>
-										<li class="menu__item"> <a class="menu__link" href="#">Пункт3</a></li>
-									</ul>
-								</nav>
-							</div>
+		<!-- header-->
+		<header class="header modal-open-for-sticky" id="headerSticky">
+			<div class="container"> 
+				<div class="header__container"> <a class="header__logo" href="#"> <img src="img/logo.svg" alt=""></a>
+					<!-- menu-->
+					<div class="menu">
+						<div class="menu__head"> 
+							<div class="menu__close"> </div>
 						</div>
-						<!-- /menu-->
-						<div class="header__hamburger hamburger hamburger--squeeze">
-							<div class="hamburger-box"> 
-								<div class="hamburger-inner"> </div>
-							</div>
+						<div class="menu__body"> 
+							<nav class="menu__nav"> 
+								<ul class="menu__list"> 
+									<li class="menu__item"> <a class="menu__link" href="#">Пункт1</a></li>
+									<li class="menu__item"> <a class="menu__link" href="#">Пункт2</a></li>
+									<li class="menu__item"> <a class="menu__link" href="#">Пункт3</a></li>
+								</ul>
+							</nav>
 						</div>
 					</div>
-				</div>
-			</header>
-			<!-- /header-->
-			<div class="content"> 
-				<div class="navpage"> 
-					<div class="container">
-						<h1>Навигация по страницам</h1>
-						<ul> 
-							<li> <a href="template.html">Шаблон</a></li>
-							<li> <a href="pagepiling.html">Поэкранный скролл</a></li>
-						</ul>
+					<!-- /menu-->
+					<div class="header__hamburger hamburger hamburger--squeeze">
+						<div class="hamburger-box"> 
+							<div class="hamburger-inner"> </div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<!-- footer-->
-			<footer class="footer">
-				<div class="container"> </div>
-			</footer>
-			<!--	/footer-->
+		</header>
+		<!-- /header-->
+		<!-- pagepiling-->
+		<div class="template-block">
+			<div class="pagepiling" id="pagepiling">
+				<div class="pagepiling__block pagepiling__block--1 section">
+					<div class="container">
+						<div class="template-block__title">Поэкранный скролл</div>
+					</div>
+				</div>
+				<div class="pagepiling__block pagepiling__block--2 section"></div>
+				<div class="pagepiling__block pagepiling__block--3 section"></div>
+				<div class="pagepiling__block pagepiling__block--4 section"></div>
+			</div>
 		</div>
+		<!-- /pagepiling-->
+		<!-- footer-->
+		<footer class="footer">
+			<div class="container"> </div>
+		</footer>
+		<!--	/footer-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/plugins/jquery.pagepiling.min.js"></script>
 		<script src="js/plugins/aos.js"></script>
