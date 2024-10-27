@@ -463,6 +463,7 @@ window.onload = function () {
   if ($('#pagepiling').length) {
     $('#pagepiling').pagepiling({
       verticalCentered: false,
+      scrollingSpeed: 0,
     });
   }
 
@@ -471,5 +472,10 @@ window.onload = function () {
 
   // Tooltipster || Пользовательская подсказка
   $('.tooltip').tooltipster();
+
+  // Fancybox || Попап галерея
+  Fancybox.bind("[data-fancybox]", {
+    // Your custom options
+  });
 
 }

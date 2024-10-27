@@ -12,11 +12,8 @@ html(lang="ru")
 
     block title
 
-    // Поэкранный скролл
-    //- link(rel="stylesheet", href="css/plugins/jquery.pagepiling.min.css")
-
-    //- // Попап галерея
-    //- link(rel="stylesheet", href="css/plugins/jquery.fancybox.min.css")
+    // Попап галерея
+    link(rel="stylesheet", href="css/plugins/fancybox.css")
 
     // Кастомизируемый скролл
     link(rel="stylesheet", href="css/plugins/jquery.scrollbar.css")
@@ -49,11 +46,13 @@ html(lang="ru")
     // JQuery
     script(src="js/jquery.min.js")
 
-    // Поэкранный скролл
-    //- script(src="js/plugins/jquery.pagepiling.min.js")
+    //- Подключение pagepiling.css в файле pagepiling.pug
 
-    //- // Попап галерея
-    //- script(src="js/plugins/jquery.fancybox.min.js")
+    // Поэкранный скролл
+    script(src="js/plugins/jquery.pagepiling.min.js")
+
+    // Попап галерея
+    script(src="js/plugins/fancybox.umd.js")
 
     // Кастомизируемый скролл
     script(src="js/plugins/jquery.scrollbar.min.js")

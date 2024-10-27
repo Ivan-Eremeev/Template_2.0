@@ -284,4 +284,22 @@ block content
           p("tooltip" title = "Это сообщение подсказки!") Какой-то текст
         // /tooltipster
 
+        // fancybox
+        .template-block 
+        
+          .template-block__title Fancybox
+
+          .row 
+            .col-sm-4 
+              a(href="img/fancybox/1.webp" data-fancybox="gallery") 
+                img(src="img/fancybox/1.webp", alt="")
+            .col-sm-4 
+              a(href="img/fancybox/2.webp" data-fancybox="gallery") 
+                img(src="img/fancybox/2.webp", alt="")
+            .col-sm-4 
+              a(href="img/fancybox/3.webp" data-fancybox="gallery") 
+                img(src="img/fancybox/3.webp", alt="")
+
+        // /fancybox
+
     include core/footer.pug
