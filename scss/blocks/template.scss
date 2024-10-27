@@ -40,4 +40,12 @@
     }
   }
 }
+.jquery-scrollbar {
+  .scrollbar-inner {
+    max-height: 100px;
+  }
+  &__content {
+    padding-right: 20px;
+  }
+}
 /* /template */

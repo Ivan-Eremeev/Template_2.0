@@ -459,8 +459,14 @@ window.onload = function () {
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
-  $('#pagepiling').pagepiling({
-    verticalCentered: false,
-  });
+  // Поэкранный скролл
+  if ($('#pagepiling').length) {
+    $('#pagepiling').pagepiling({
+      verticalCentered: false,
+    });
+  }
+
+  // 
+  $('.scrollbar-inner').scrollbar();
 
 }

@@ -7640,6 +7640,13 @@ body.lock {
   background-color: purple;
 }
 
+.jquery-scrollbar .scrollbar-inner {
+  max-height: 100px;
+}
+.jquery-scrollbar__content {
+  padding-right: 20px;
+}
+
 /* /template */
 /* popup */
 .popup {
