@@ -455,7 +455,7 @@ window.onload = function () {
   // Inputmask || Маски для инпутов
   $('input[type=tel]').inputmask("+7 999-999-99-99");
 
-  // Bootstrap Tooltips
+  // Bootstrap Tooltips || Пользовательские подсказки
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
@@ -466,7 +466,10 @@ window.onload = function () {
     });
   }
 
-  // 
+  // JQuery Scrollbar || Кастомизируемый скролл
   $('.scrollbar-inner').scrollbar();
+
+  // Tooltipster || Пользовательская подсказка
+  $('.tooltip').tooltipster();
 
 }
