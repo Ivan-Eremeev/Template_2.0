@@ -7647,6 +7647,43 @@ body.lock {
   padding-right: 20px;
 }
 
+.progress-1::part(base) {
+  width: 200px;
+  height: auto;
+}
+
+.progress-1::part(circle) {
+  stroke: hsl(39deg, 100%, 85%);
+  fill: #999;
+}
+
+.progress-1::part(value) {
+  stroke: hsl(39deg, 100%, 50%);
+}
+
+.progress-1::part(text) {
+  fill: hsl(39deg, 100%, 50%);
+}
+
+.progress-2::part(base) {
+  width: 200px;
+  height: auto;
+}
+
+.progress-2::part(circle) {
+  stroke-width: 6px;
+  stroke: #999;
+}
+
+.progress-2::part(value) {
+  stroke: green;
+  stroke-dasharray: 4 1;
+}
+
+.progress-2::part(text) {
+  fill: red;
+}
+
 /* /template */
 /* popup */
 .popup {
