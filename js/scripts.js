@@ -478,4 +478,29 @@ window.onload = function () {
     // Your custom options
   });
 
+  // Включить анимацию когда круг в видимой области для плагина Circle Progress
+  function circleProgressInView() {
+    let cp = $('circle-progress');
+    cp.each(function (index, element) {
+      const value = element.attr('value');
+      element.attr('value', 0);
+      const intersectionCallback = (entries) => {
+        entries.forEach(entry => {
+          if (entry.intersectionRatio === 1) {
+            entry.target.value = value
+          } 
+          // else if (entry.intersectionRatio === 0) {
+          //   entry.target.value = 0
+          // }
+        })
+      }
+      const observer = new IntersectionObserver(intersectionCallback, {
+        threshold: [0, 1],
+      })
+      observer.observe(element);
+    });
+  }
+  circleProgressInView();
+
+
 }
