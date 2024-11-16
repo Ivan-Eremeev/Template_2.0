@@ -7684,6 +7684,10 @@ body.lock {
   fill: red;
 }
 
+#map {
+  height: 600px;
+}
+
 /* /template */
 /* popup */
 .popup {
