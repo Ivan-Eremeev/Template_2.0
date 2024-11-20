@@ -573,4 +573,10 @@ window.onload = function () {
       .add(myPlacemarkWithContent);
   });
 
+  
+  const parallaxImg = document.querySelectorAll('.parallax');
+  new SimpleParallax(parallaxImg, {
+    scale: 2
+  });
+
 }
