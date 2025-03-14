@@ -1,3 +1,21 @@
+import gulp from 'gulp';
+import pug from 'gulp-pug';
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(dartSass);
+import plumber from 'gulp-plumber';
+import autoprefixer from 'gulp-autoprefixer';
+import browserSync from 'browser-sync';
+import cleanCSS from 'gulp-clean-css';
+import uglify from 'gulp-uglify';
+import rename from 'gulp-rename';
+import gcmq from 'gulp-group-css-media-queries';
+import imagemin, { gifsicle, mozjpeg, optipng, svgo } from 'gulp-imagemin';
+import webp from 'gulp-webp';
+import svgSprite from 'gulp-svg-sprite';
+import ttf2woff2 from 'gulp-ttftowoff2';
+import ttf2woff from 'gulp-ttf2woff';
+
 // * Команды *
 // "gulp" - запуск gulp.
 // "gulp mg" - группировка всех медиазапросов в конец файла main.css.
@@ -20,25 +38,7 @@ const scssPath = 'scss', // Scss
   jsPath = 'js', // Js
   imgPath = 'img'; // Изображения
 
-// Код
-const gulp = require('gulp'),
-  sass = require('gulp-sass')(require('sass')),
-  pug = require('gulp-pug'),
-  autoprefixer = require('gulp-autoprefixer'),
-  cleanCSS = require('gulp-clean-css'),
-  browserSync = require('browser-sync'),
-  uglify = require('gulp-uglify'),
-  rename = require("gulp-rename"),
-  gcmq = require('gulp-group-css-media-queries'),
-  imageMin = require('gulp-imagemin'),
-  pngquant = require('imagemin-pngquant'),
-  plumber = require('gulp-plumber'),
-  webp = require('gulp-webp'),
-  svgSprite = require('gulp-svg-sprite'),
-  ttf2woff2 = require('gulp-ttftowoff2'),
-  ttf2woff = require('gulp-ttf2woff');
-
-gulp.task('pug', function () {
+gulp.task('pugBuild', function () {
   return gulp.src(pugPath + '/*.pug')
     .pipe(plumber())
     .pipe(pug({
@@ -48,10 +48,10 @@ gulp.task('pug', function () {
     .pipe(browserSync.reload({ stream: true }));
 });
 
-gulp.task('style', function () {
+gulp.task('styleBuild', function () {
   return gulp.src(scssPath + '/*.scss')
     .pipe(plumber())
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(sass({ outputStyle: 'expanded', quietDeps: true, silenceDeprecations: ['import'] }).on('error', sass.logError))
     .pipe(autoprefixer({
       cascade: false
     }))
@@ -98,15 +98,23 @@ gulp.task('js-min', function () {
 
 gulp.task('img-min', function () {
   return gulp.src([imgPath + '/**/*', '!' + imgPath + '/svg_icons/*'])
-    /* .pipe(gulp.dest(imgPath + '-full')) */
-    .pipe(imageMin([
-      imageMin.gifsicle(),
-      imageMin.mozjpeg(),
-      imageMin.svgo(),
-      pngquant()
-    ], {
-      verbose: true
-    }))
+    .pipe(imagemin([
+      gifsicle({ interlaced: true }),
+      mozjpeg({ quality: 75, progressive: true }),
+      optipng({ optimizationLevel: 5 }),
+      svgo({
+        plugins: [
+          {
+            name: 'removeViewBox',
+            active: true
+          },
+          {
+            name: 'cleanupIDs',
+            active: false
+          }
+        ]
+      })
+    ]))
     .pipe(gulp.dest(imgPath));
 });
 
@@ -128,17 +136,27 @@ gulp.task('svgsprite', function () {
           padding: 0
         },
         transform: [{
-          "svgo": {
-            "plugins": [
-              { removeViewBox: false },
-              { removeUnusedNS: false },
-              { removeUselessStrokeAndFill: true },
-              { cleanupIDs: false },
-              { removeComments: true },
-              { removeEmptyAttrs: true },
-              { removeEmptyText: true },
-              { collapseGroups: true },
-              { removeAttrs: { attrs: '(fill|stroke|style)' } }
+          svgo: {
+            plugins: [
+              {
+                name: "removeAttrs",
+                params: {
+                  attrs: "(fill|stroke|style)"
+                }
+              },
+              {
+                name: 'preset-default',
+                params: {
+                  removeViewBox: false,
+                  removeUnusedNS: false,
+                  removeUselessStrokeAndFill: true,
+                  cleanupIDs: false,
+                  removeComments: true,
+                  removeEmptyAttrs: true,
+                  removeEmptyText: true,
+                  collapseGroups: true,
+                }
+              }
             ]
           }
         }]
@@ -154,7 +172,7 @@ gulp.task('svgsprite', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch(pugPath + '/**/*.pug', gulp.parallel('pug'));
+  gulp.watch(pugPath + '/**/*.pug', gulp.parallel('pugBuild'));
   if (html) {
     gulp.watch(htmlPath + '**/*.html', function reload(done) {
       browserSync.reload();
@@ -169,7 +187,7 @@ gulp.task('watch', function () {
     browserSync.reload();
     done();
   });
-  gulp.watch(scssPath + '/**/*.scss', gulp.parallel('style'));
+  gulp.watch(scssPath + '/**/*.scss', gulp.parallel('styleBuild'));
   gulp.watch(imgPath + '/svg_icons/*.svg', gulp.parallel('svgsprite'));
 });
 
@@ -193,6 +211,6 @@ gulp.task('ttf2woff', function () {
 
 gulp.task('fonts', gulp.parallel('ttf2woff', 'ttf2woff2'));
 
-gulp.task('default', gulp.parallel('browser-sync', 'pug', 'style', 'svgsprite', 'watch'));
+gulp.task('default', gulp.parallel('browser-sync', 'pugBuild', 'styleBuild', 'svgsprite', 'watch'));
 
 gulp.task('min', gulp.parallel('css-min', 'js-min'));
