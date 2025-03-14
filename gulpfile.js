@@ -198,16 +198,23 @@ gulp.task('webp', () =>
 );
 
 gulp.task('ttf2woff2', function () {
-  return gulp.src('fonts/**/*.ttf')
+  return gulp.src(['fonts/**/*.ttf'], {
+      encoding: false, // Important!
+      removeBOM: false,
+    })
     .pipe(ttf2woff2())
     .pipe(gulp.dest('fonts'));
 });
 
 gulp.task('ttf2woff', function () {
-  return gulp.src('fonts/**/*.ttf')
+  return gulp.src(['fonts/**/*.ttf'], {
+    encoding: false, // Important!
+    removeBOM: false,
+  })
     .pipe(ttf2woff())
     .pipe(gulp.dest('fonts'));
 });
+
 
 gulp.task('fonts', gulp.parallel('ttf2woff', 'ttf2woff2'));
 

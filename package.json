@@ -1,7 +1,7 @@
 {
-  "name": "Gulp",
+  "name": "gulp",
   "version": "1.0.0",
-  "description": "Gulp build",
+  "description": "gulp build",
   "type": "module",
   "devDependencies": {
     "browser-sync": "*",
